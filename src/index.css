@@ -1,0 +1,64 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Anton", sans-serif;
+  --font-outfit: "Outfit", sans-serif;
+  
+  --color-pitch: #128C4B;
+  --color-pitch-dark: #0A4D29;
+  --color-gold: #FFD700;
+  --color-obsidian: #0A0A0A;
+  --color-uk-red: #C8102E;
+  --color-uk-blue: #00247D;
+}
+
+@layer base {
+  body {
+    @apply bg-[#f8f9fa] text-obsidian font-sans antialiased overflow-x-hidden;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(18, 140, 75, 0.03) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, rgba(255, 215, 0, 0.03) 0px, transparent 50%);
+    @apply text-base md:text-lg;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight uppercase;
+  }
+}
+
+.modern-card {
+  @apply bg-white border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-2xl overflow-hidden transition-all duration-300;
+}
+
+.modern-card:hover {
+  @apply shadow-[0_20px_40px_rgb(0,0,0,0.08)] -translate-y-1;
+}
+
+.glass-panel {
+  @apply bg-white/70 backdrop-blur-xl border border-white/20;
+}
+
+.pitch-gradient {
+  background: linear-gradient(135deg, #128C4B 0%, #0A4D29 100%);
+}
+
+.stadium-border-refined {
+  @apply border-2 border-obsidian rounded-xl;
+}
+
+.button-modern {
+  @apply px-8 py-4 rounded-full font-outfit font-bold uppercase tracking-wider transition-all active:scale-95;
+}
+
+.text-stroke {
+  -webkit-text-stroke: 1px currentColor;
+  color: transparent;
+}
+
+/* Subtle pattern for that sports feel */
+.pitch-pattern {
+  background-image: radial-gradient(#128C4B 0.5px, transparent 0.5px);
+  background-size: 24px 24px;
+}
